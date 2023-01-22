@@ -1,0 +1,7 @@
+local mongodb = require("mongodb")
+mongodb.connect("mongodb://localhost:27017")
+local result = mongodb.executeQuery("hywave", "hywcoll", '{"test":"Test"}')
+print(result)
+local ptr = mongodb.allocateMemory(1024)
+print(ptr)
+mongodb.freeMemory(ptr)
